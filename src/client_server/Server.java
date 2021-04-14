@@ -13,11 +13,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
-
+/**
+ * This class creates an GUI server type that will connect to a GUI client type
+ * to send and receive data
+ * @author octavian
+ */
 public class Server extends Application {	
 	protected static int userNumber;
 	protected static DataInputStream inputFromUser;
 	@Override
+	/**
+	 * This method will create the elements displayed inside the GUI and connect 
+	 * to the client GUI. It also check if the input is an integer and if the 
+	 * integer is a prime number
+	 */
 	public void start(Stage primaryStage) throws Exception {
 	    // Text area for displaying contents
 	    TextArea serverResponse = new TextArea();
@@ -82,7 +91,11 @@ public class Server extends Application {
 	        }
 	      }).start();	   
 	    }	
-	
+	/**
+	 * Checks if an integer is a prime number
+	 * @param number is the number entered by the user
+	 * @return boolean isPrime
+	 */
 	public static boolean isPrime(int number){
 		boolean isPrime = true;
 		for(int divisor = 2; divisor <= number / 2; divisor ++ ){
@@ -93,7 +106,11 @@ public class Server extends Application {
 		}		
 			return isPrime;				
 	}
-	
+	/**
+	 * This is the main method of the Server class that will launch
+	 * the server GUI
+	 * @param args String array used to execute the application
+	 */
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

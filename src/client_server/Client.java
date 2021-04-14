@@ -12,7 +12,12 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.io.*;
 import java.net.Socket;
-
+/**
+ * This class creates an GUI client type that will connect to a GUI server type
+ * to send and receive data
+ * @author octavian
+ *
+ */
 public class Client extends Application {
 	  DataOutputStream dataToServer = null;
 	  DataInputStream dataFromServer = null;
@@ -22,6 +27,10 @@ public class Client extends Application {
 	  private static String serverAnswer = "";
 	  protected static int numberToCheck;
 	@Override
+	/**
+	 * This method will create the elements displayed inside the GUI and connect 
+	 * to the server GUI
+	 */
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		Pane topPane = new Pane();
@@ -122,10 +131,14 @@ public class Client extends Application {
 	        responseArea.appendText(ex.toString() + '\n');
 	      }
 	}
-	
-	/*public static void main(String[] args) {
+	/**
+	 * This is the main method of the Client class that will launch
+	 * the client GUI
+	 * @param args String array used to execute the application
+	 */
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		launch(args);		
-	}*/
+	}
 
 }
